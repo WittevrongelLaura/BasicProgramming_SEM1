@@ -1,13 +1,15 @@
 from .Tvprogramma import Tvprogramma
-from random import random
+import random
 
 class Zender:
-    __aantal_afgelopen_programmas = 0
 
+    __aantal_aangemaakte_zenders = 0
+    
     def __init__(self, parnaam, partaal):
         self.naam = parnaam
         self.taal = partaal
         self.programmas = []
+        Zender.__aantal_aangemaakte_zenders += 1
 
     # ********** property naam - (setter/getter) ***********
     @property
@@ -47,15 +49,20 @@ class Zender:
 
 
     def voeg_programma_toe(self, programma):
-        if programma in Tvprogramma.titel:
+        if type(programma) is Tvprogramma:
             self.programmas.append(programma)
     
     def zoek_afgelopen_programmas(self):
-        pass
+        lijst_afgelopen_programmas = []
+        for programma in self.programmas:
+            if programma.is_actief is False:
+                if not programma in lijst_afgelopen_programmas:
+                    lijst_afgelopen_programmas.append(programma)
+        return lijst_afgelopen_programmas
 
     def selecteer_willekeurig_programma(self):
         return random.choice(self.programmas)
 
     @staticmethod
     def geef_aantal_aangemaakte_zenders():
-        return Zender.__aantal_afgelopen_programmas
+        return Zender.__aantal_aangemaakte_zenders
