@@ -40,7 +40,7 @@ class Tvprogramma:
             self.__is_actief = False
     
     def __str__(self):
-        return f"TV Programma: {self.titel} door {Presentator}"
+        return f"TV Programma: {self.titel} door {Presentator.voornaam}"
 
     def __repr__(self):
-        return f"TV Programma: {self.titel} door {Presentator}"
+        return f"TV Programma: {self.titel} door {Presentator.naam}"
