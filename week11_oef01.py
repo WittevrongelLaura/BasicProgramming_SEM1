@@ -14,7 +14,7 @@ import logging
 
 
 def genereer_even_getallen(aantal):
-    logging.basicConfig(filename="log_evengetallen.log", level=logging.INFO, format="%(asctime)s - %(message)s")
+    logging.basicConfig(filename="docweek11/log_evengetallen.log", level=logging.INFO, format="%(asctime)s - %(message)s")
     even_getallen = []
 
     while len(even_getallen) != aantal:
