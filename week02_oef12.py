@@ -10,7 +10,7 @@
 # De overeenkomstige maand is -> onbekende maand
 
 def vertaal_maandnummer_naar_str(maandnr):
-    if maandnr > 1 and maandnr <= 12:
+    if maandnr >= 1 and maandnr <= 12:
         if maandnr == 1:
             return "januari"
         elif maandnr == 2:
@@ -40,5 +40,7 @@ def vertaal_maandnummer_naar_str(maandnr):
     else:
         return "Geef een geldige maandnr in"
 
+
 maandnummer = int(input("Geef een maandnummer in: > "))
-print(f"De overeekomstige maand is -> {vertaal_maandnummer_naar_str(maandnummer)}")
+print(
+    f"De overeekomstige maand is -> {vertaal_maandnummer_naar_str(maandnummer)}")
